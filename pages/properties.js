@@ -5,8 +5,8 @@ import api from "../auth/axios";
 import { MDBContainer } from "mdbreact";
 import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
-import {SearchFilter} from "../components/searchFilter";
-
+import { SearchFilter } from "../components/searchFilter";
+import Head from "next/head";
 const Properties = ({ properties, currentPage, pageCount }) => {
   const router = useRouter();
 
@@ -14,34 +14,41 @@ const Properties = ({ properties, currentPage, pageCount }) => {
     const currentPath = router.pathname;
     const currentQuery = { ...router.query };
     currentQuery.page = page.selected + 1;
-    router.push({
-      pathname: currentPath,
-      query: currentQuery,
-    }).then(()=> window.scrollTo(0,0))
+    router
+      .push({
+        pathname: currentPath,
+        query: currentQuery,
+      })
+      .then(() => window.scrollTo(0, 0));
   };
 
   return (
-    <Layout>
-      <MDBContainer>
-      <SearchFilter/>
-        <Card properties={properties} />
-        <div className="paginateCenter">
-          <ReactPaginate
-            onPageChange={paginationHandler}
-            initialPage={currentPage - 1}
-            pageCount={pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            previousLabel="Precedent"
-            nextLabel="Suivant"
-            activeClassName="activated"
-            breakLabel="..."
-            pageClassName="paginate"
-            containerClassName="custom-paginate"
-          />
-        </div>
-      </MDBContainer>
-    </Layout>
+    <>
+      <Head>
+        <title>Liste de nos biens </title>
+      </Head>
+      <Layout>
+        <MDBContainer>
+          <SearchFilter />
+          <Card properties={properties} />
+          <div className="paginateCenter">
+            <ReactPaginate
+              onPageChange={paginationHandler}
+              initialPage={currentPage - 1}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              previousLabel="Precedent"
+              nextLabel="Suivant"
+              activeClassName="activated"
+              breakLabel="..."
+              pageClassName="paginate"
+              containerClassName="custom-paginate"
+            />
+          </div>
+        </MDBContainer>
+      </Layout>
+    </>
   );
 };
 
