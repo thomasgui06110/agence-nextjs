@@ -8,7 +8,7 @@ import {
   MDBRow,
   MDBView,
 } from "mdbreact";
-import {priceFormatted} from "./helpers";
+import { priceFormatted } from "./helpers";
 
 export const PropertySection = ({ properties }) => (
   <>
@@ -20,22 +20,24 @@ export const PropertySection = ({ properties }) => (
         properties.map((property) => (
           <MDBCol md="4" lg="4" key={property._id}>
             <MDBView zoom>
-              <img src={property.pictures[0]} alt={property.title} className="globalImg"/>
+              <img
+                src={property.pictures[0]}
+                alt={property.title}
+                className="globalImg"
+              />
             </MDBView>
             <MDBCardBody>
-            <MDBCardTitle>{property.title}</MDBCardTitle>
-            <MDBCardText>
-            <strong>{priceFormatted(property.price)}</strong>
-            </MDBCardText>
+              <MDBCardTitle>{property.title}</MDBCardTitle>
+              <MDBCardText>
+                <strong>{priceFormatted(property.price)}</strong>
+              </MDBCardText>
             </MDBCardBody>
           </MDBCol>
         ))}
     </MDBRow>
     <div className="text-center">
-    <button className="globalButton">
-    Afficher plus
-    </button>
+      <button className="globalButton">Afficher plus</button>
     </div>
-    <hr className="my-5"/>
+    <hr className="my-5" />
   </>
 );
