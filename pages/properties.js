@@ -6,7 +6,7 @@ import { MDBContainer } from "mdbreact";
 import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
 import { SearchFilter } from "../components/searchFilter";
-
+import Head from 'next/head'
 const Properties = ({ properties, currentPage, pageCount }) => {
   const router = useRouter();
 
@@ -23,6 +23,10 @@ const Properties = ({ properties, currentPage, pageCount }) => {
   };
 
   return (
+    <>
+       <Head>
+      <title>Liste de nos biens </title>
+    </Head>
     <Layout footer>
       <MDBContainer>
       <SearchFilter />
@@ -44,6 +48,7 @@ const Properties = ({ properties, currentPage, pageCount }) => {
         </div>
       </MDBContainer>
     </Layout>
+    </>
   );
 };
 

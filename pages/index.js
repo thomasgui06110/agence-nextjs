@@ -6,9 +6,14 @@ import { MDBContainer } from "mdbreact";
 import { Carousel } from "../components/caroussel";
 import { PropertySection } from "../components/propertySection";
 import { Features } from "../components/features";
+import Head from 'next/head'
 
 export default function Home({ propertiesVip, properties }) {
   return (
+    <>
+    <Head>
+      <title>Agence Next JS Cannes</title>
+    </Head>
     <Layout footer>
       <Carousel />
       <MDBContainer>
@@ -17,6 +22,7 @@ export default function Home({ propertiesVip, properties }) {
         <Features />
       </MDBContainer>
     </Layout>
+    </>
   );
 }
 
