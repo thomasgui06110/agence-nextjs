@@ -15,7 +15,7 @@
 
 .globalButton:hover {
   background-color: #fff;
-  border:  #00695c;
+  border: 1px solid #00695c;
   color:  #00695c;
 }
 
