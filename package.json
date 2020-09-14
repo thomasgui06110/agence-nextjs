@@ -1,0 +1,24 @@
+{
+  "name": "final-application",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "js-cookie": "^2.2.1",
+    "jwt-decode": "^2.2.0",
+    "mdbreact": "^4.27.0",
+    "moment-timezone": "^0.5.31",
+    "next": "9.5.2",
+    "nprogress": "^0.2.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-moment": "^0.9.7",
+    "react-paginate": "^6.3.2",
+    "swr": "^0.3.0"
+  }
+}
