@@ -20,6 +20,7 @@ export const CardRelated = ({ properties }) => (
             <MDBCardImage
               src={property.pictures[0]}
               className="globalImg"
+              alt={property.title}
               hover
               waves
             />

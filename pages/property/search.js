@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import api from "../../auth/axios";
 import { Card } from "../../components/card";
 import { SearchFilter } from "../../components/searchFilter";
+import Head from "next/head";
 
 const Search = () => {
   const router = useRouter();
@@ -23,6 +24,10 @@ const Search = () => {
   }, [router.query.title, router.query.category]);
   
   return (
+    <>
+    <Head>
+        <title> {router.query.title} | Agence NextJS Cannes</title>
+      </Head>
     <Layout>
       <div className="container">
         <SearchFilter />
@@ -36,6 +41,7 @@ const Search = () => {
         ) : null}
       </div>
     </Layout>
+    </>
   );
 };
 
