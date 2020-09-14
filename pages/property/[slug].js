@@ -22,7 +22,7 @@ const Property = ({ property, properties, propertyRelated }) => {
   return (
     <>
       <Head>
-        <title> {property.title} | Agence NextJS Cannes</title>
+        <title> {property && property.title} | Agence NextJS Cannes</title>
       </Head>
       {property && (
         <Layout>
